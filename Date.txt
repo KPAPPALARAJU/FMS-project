@@ -1,0 +1,41 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+public class checker {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LocalDate todayDate=LocalDate.now();
+		System.out.println(todayDate);
+		LocalDate d=LocalDate.of(1999, 2,3 );
+		System.out.println("My date of Birth:"+d);
+		LocalDate m=LocalDate.of(1999,Month.FEBRUARY, 3);
+		System.out.println(m);
+		System.out.println(m.getYear());
+		System.out.println(m.getMonth());
+		System.out.println(m.getDayOfMonth());
+		System.out.println(m.getDayOfYear());
+		System.out.println(m.getDayOfWeek());
+		LocalDate date=LocalDate.parse("13 February, 2020", DateTimeFormatter.ofPattern("dd MMMM, yyyy"));
+		System.out.println(date.format(DateTimeFormatter.ofPattern("dd/MMMM/YYYY")));
+		System.out.println(m.plusDays(7));
+		System.out.println(m.plusMonths(4));
+		System.out.println(m.plusWeeks(1));
+		System.out.println(m.plusYears(1));
+		System.out.println(m.minusDays(7));
+		System.out.println(m.minusMonths(4));
+		System.out.println(m.minusWeeks(1));
+		System.out.println(m.minusYears(1));
+		LocalDate date1=LocalDate.of(1998, Month.FEBRUARY, 02);
+		System.out.println(ChronoUnit.YEARS.between(date1,LocalDate.now()));
+		System.out.println(ChronoUnit.MONTHS.between(date1, LocalDate.now()));
+		LocalDate dateFirst = LocalDate.of(2018, 2,21);
+		LocalDate dateSecond = LocalDate.of(2018, 2,20);
+		
+		System.out.println("dateFirst.isBefore(dateSecond) "+dateSecond.isBefore(dateFirst));
+		System.out.println("dateFirst.isAfter(dateSecond) "+dateFirst.isAfter(dateSecond));
+	}
+
+}
